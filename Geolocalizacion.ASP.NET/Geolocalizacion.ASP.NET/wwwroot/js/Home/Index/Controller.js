@@ -6,7 +6,7 @@ Geolocalizacion.ASP.NET.Home.Index.Controller = function () {
 
     base.Ini = function (opts) {
         'use strict';
-        debugger;
+        debugger
     };
 
     base.Parameters = {
@@ -15,8 +15,6 @@ Geolocalizacion.ASP.NET.Home.Index.Controller = function () {
     };
 
     base.Variable = {
-
-        ArrayImagen: [],
 
         Constante: {
 
