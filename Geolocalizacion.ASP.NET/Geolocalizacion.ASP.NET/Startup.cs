@@ -1,4 +1,7 @@
+using Geolocalizacion.ASP.NET.Context.Interfaces;
+using Geolocalizacion.ASP.NET.Context.Main;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Connections;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
@@ -24,6 +27,12 @@ namespace Geolocalizacion.ASP.NET
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            #region [IoC]
+            services.AddSingleton<IConnection, Connection>();
+            services.AddSingleton<IHomeContext, HomeContext>();
+            #endregion
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
