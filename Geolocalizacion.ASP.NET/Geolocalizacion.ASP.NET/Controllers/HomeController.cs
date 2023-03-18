@@ -1,5 +1,4 @@
 ﻿using Geolocalizacion.ASP.NET.Context.Interfaces;
-using Geolocalizacion.ASP.NET.Context.Main;
 using Geolocalizacion.ASP.NET.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -11,7 +10,6 @@ namespace Geolocalizacion.ASP.NET.Controllers
     {
         #region [Properties]
         private readonly ILogger<HomeController> _logger;
-        private readonly HomeContext oHomeContext = null;
         private readonly IHomeContext _homeContext;
         #endregion
 
@@ -24,10 +22,10 @@ namespace Geolocalizacion.ASP.NET.Controllers
         #endregion
 
         #region [Action Result]
-        public ActionResult Index()
+        public IActionResult Index()
         {
             var response = _homeContext.GetAllUbicaciones();
-            return View();
+            return View(response);
         }
 
         public IActionResult Privacy()
