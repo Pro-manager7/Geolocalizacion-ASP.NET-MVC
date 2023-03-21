@@ -10,22 +10,19 @@ namespace Geolocalizacion.ASP.NET.Controllers
     {
         #region [Properties]
         private readonly ILogger<HomeController> _logger;
-        private readonly IHomeContext _homeContext;
-        #endregion
+        #endregion  
 
         #region [Constructor]   
-        public HomeController(ILogger<HomeController> logger, IHomeContext homeContext)
+        public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            _homeContext = homeContext;
         } 
         #endregion
 
         #region [Action Result]
         public IActionResult Index()
         {
-            var response = _homeContext.GetAllUbicaciones();
-            return View(response);
+            return View();
         }
 
         public IActionResult Privacy()

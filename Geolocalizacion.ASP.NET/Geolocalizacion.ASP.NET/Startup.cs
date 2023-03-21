@@ -16,6 +16,10 @@ namespace Geolocalizacion.ASP.NET
 {
     public class Startup
     {
+        #region [Properties]
+        private readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins2";
+        #endregion
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -33,6 +37,20 @@ namespace Geolocalizacion.ASP.NET
             services.AddSingleton<IHomeContext, HomeContext>();
             #endregion
 
+            #region [Cors]
+            services.AddCors(options =>
+            {
+                options.AddPolicy(MyAllowSpecificOrigins,
+                                  builder =>
+                                  {
+                                      builder.AllowAnyOrigin()
+                                             .AllowAnyHeader()
+                                             .AllowAnyMethod();
+
+
+                                  });
+            });
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
