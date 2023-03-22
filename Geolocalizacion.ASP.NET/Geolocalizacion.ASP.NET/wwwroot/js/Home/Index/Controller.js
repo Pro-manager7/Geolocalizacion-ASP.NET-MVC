@@ -6,7 +6,7 @@ Geolocalizacion.ASP.NET.Home.Index.Controller = function () {
 
     base.Ini = function (opts) {
         'use strict';
-      
+        debugger;
         base.Function.InicializarMap();
     };
 
@@ -56,6 +56,7 @@ Geolocalizacion.ASP.NET.Home.Index.Controller = function () {
             }).addTo(map);
 
             var marker = L.marker([-12.04619962493953, -77.04353134031399]).addTo(map);
+            var marker2 = L.marker([-09.04619962493953, -70.04353134031399]).addTo(map);
         },
 
     };

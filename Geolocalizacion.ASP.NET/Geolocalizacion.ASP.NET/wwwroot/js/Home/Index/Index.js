@@ -4,7 +4,7 @@ try {
    
     $(document).ready(function () {
         'use strict';
-
+        debugger;
         Geolocalizacion.ASP.NET.Home.Index.Page = new Geolocalizacion.ASP.NET.Home.Index.Controller();
         Geolocalizacion.ASP.NET.Home.Index.Page.Ini();
     });
