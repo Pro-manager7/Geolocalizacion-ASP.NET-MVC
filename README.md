@@ -1,2 +1,2 @@
-# Geolocalizacion-con-ASP.NET-MVC-.NET
-Geolocalizacion con ASP.NET MVC  .NET
+# Geolocalizacion-ASP.NET-MVC
+Geolocalizacion ASP.NET MVC
